@@ -27,8 +27,8 @@ Barbara Ramos	  Graphic Designer	     barbara-ramos-graphic-designer.jpg
 
 
 PER OGNI MEMBRO DEL TEAM
-    - stampo in console le sue informazioni
-    - BONUS: stampo nel DOM le sue informazioni in contenitori che stilizzerò dal CSS
+    x stampo in console le sue informazioni
+    x BONUS: stampo nel DOM le sue informazioni in contenitori che stilizzerò dal CSS
     BONUS: 
     - prelevo la stringa contenente il nome dell'immagine e la imposto come src delle immagini nel DOM
 */
@@ -71,6 +71,9 @@ const teamMembers = [
     }
 ]
 
+// Bersaglio il contenitore delle cards
+const cardContainerEl = document.getElementById('card-container');
+
 
 // PER OGNI MEMBRO DEL TEAM
 
@@ -83,4 +86,72 @@ for(let i=0; i<teamMembers.length; i++){
     console.log(`Photo: ${teamMembers[i].photo}`);
     console.log(`________________________________________________________`);
     
+    // - Creo n <div> quanti sono gli elementi dell'array
+    createCard(cardContainerEl, teamMembers[i].photo);
+
+}
+
+
+// - BONUS: stampo nel DOM le sue informazioni in contenitori che stilizzerò dal CSS
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//*******************************************
+//                FUNCTIONS                //
+//*******************************************
+
+
+/**
+ * Crea un div con dentro un tag img, gli aggiunge una classe card e lo appende al contenitore
+ * @param {HTMLElement} parent
+ * @param {string} src
+ */
+function createCard(parent, src){
+    // creo un div
+    let newDivEl = document.createElement('div');
+
+    // gli assegno una classe card
+    newDivEl.classList.add('card');
+
+    // creo un'immagine 
+    let newImgEl = document.createElement('img');
+
+    // setto la src dell'immagine
+    newImgEl.src = getSrc(src);
+
+    // appendo l'immagine alla card
+    newDivEl.append(newImgEl);
+
+    // appendo la card al contenitore
+    parent.append(newDivEl);
+}
+
+/**
+ * trasformo la stringa proprietà in un percorso src
+ * @param {string} property
+ * @returns {string}
+ */
+function getSrc(property){
+    property = `../img/${property}`;
+    return property;
 }
