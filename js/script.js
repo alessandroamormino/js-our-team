@@ -159,6 +159,6 @@ function createCard(parent, name, role, src){
  * @returns {string}
  */
 function getSrc(property){
-    property = `../img/${property}`;
+    property = `./img/${property}`;
     return property;
 }
