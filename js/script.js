@@ -88,7 +88,7 @@ for(let i=0; i<teamMembers.length; i++){
     
     // - BONUS: stampo nel DOM le sue informazioni in contenitori che stilizzerò dal CSS
     // - Creo n <div> quanti sono gli elementi dell'array
-    createCard(cardContainerEl, teamMembers[i].photo);
+    createCard(cardContainerEl, teamMembers[i].name, teamMembers[i].role, teamMembers[i].photo);
 
 }
 
@@ -125,21 +125,29 @@ for(let i=0; i<teamMembers.length; i++){
  * @param {HTMLElement} parent
  * @param {string} src
  */
-function createCard(parent, src){
+function createCard(parent, name, role, src){
     // creo un div
     let newDivEl = document.createElement('div');
 
     // gli assegno una classe card
     newDivEl.classList.add('card');
 
+    // creo un div dentro la card per le informazioni
+    let newTitleEl = document.createElement('div');
+    newTitleEl.classList.add('info');
+    newTitleEl.innerHTML = `<h3>${name}</h3><h4>${role}</h4>`;
+    
     // creo un'immagine 
     let newImgEl = document.createElement('img');
-
+    
     // setto la src dell'immagine
     newImgEl.src = getSrc(src);
-
+    
     // appendo l'immagine alla card
     newDivEl.append(newImgEl);
+    
+    // appendo le informazioni alla card
+    newDivEl.append(newTitleEl);
 
     // appendo la card al contenitore
     parent.append(newDivEl);
