@@ -86,13 +86,12 @@ for(let i=0; i<teamMembers.length; i++){
     console.log(`Photo: ${teamMembers[i].photo}`);
     console.log(`________________________________________________________`);
     
+    // - BONUS: stampo nel DOM le sue informazioni in contenitori che stilizzerò dal CSS
     // - Creo n <div> quanti sono gli elementi dell'array
     createCard(cardContainerEl, teamMembers[i].photo);
 
 }
 
-
-// - BONUS: stampo nel DOM le sue informazioni in contenitori che stilizzerò dal CSS
 
 
 

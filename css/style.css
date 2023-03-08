@@ -1,0 +1,38 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Reset */
+
+.container-centered{
+    max-width: 1140px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.container-centered header{
+    margin: 3em 0;
+}
+
+.container-centered header h1{
+    margin-bottom: 1em;
+}
+
+#card-container{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 1em;
+    /* flex */
+}
+
+#card-container .card{
+    width: calc(100% / 3 - (1em / 3 * 2));
+}
+
+#card-container .card img{
+    display: block;
+    width: 100%;
+}
