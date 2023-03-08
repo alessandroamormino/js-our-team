@@ -16,7 +16,7 @@
 // PSEUDOCODICE: 
 
 /*
-- creo un array di oggetti contentenenti le informazioni del team: 
+x creo un array di oggetti contentenenti le informazioni del team: 
 
 Wayne Barnett	  Founder & CEO	         wayne-barnett-founder-ceo.jpg
 Angela Caroll	  Chief Editor	         angela-caroll-chief-editor.jpg
@@ -70,3 +70,17 @@ const teamMembers = [
         photo: 'barbara-ramos-graphic-designer.jpg'
     }
 ]
+
+
+// PER OGNI MEMBRO DEL TEAM
+
+console.log(`======================Team Members======================`);
+
+for(let i=0; i<teamMembers.length; i++){
+    // - stampo in console le sue informazioni
+    console.log(`Name: ${teamMembers[i].name}`);
+    console.log(`Role: ${teamMembers[i].role}`);
+    console.log(`Photo: ${teamMembers[i].photo}`);
+    console.log(`________________________________________________________`);
+    
+}
