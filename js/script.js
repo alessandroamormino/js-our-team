@@ -100,9 +100,19 @@ for (let i=0; i<teamMembers.length; i++){
         console.log(`${key}: ${teamMembers[i][key]}`);
     }
     console.log(`________________________________________________________`);
-
+    
     createCard(cardContainerEl, teamMembers[i].name, teamMembers[i].role, teamMembers[i].photo);
 }
+
+
+
+
+
+
+
+
+
+
 
 
 
