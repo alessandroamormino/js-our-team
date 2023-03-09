@@ -79,38 +79,30 @@ const cardContainerEl = document.getElementById('card-container');
 
 console.log(`======================Team Members======================`);
 
-for(let i=0; i<teamMembers.length; i++){
-    // - stampo in console le sue informazioni
-    console.log(`Name: ${teamMembers[i].name}`);
-    console.log(`Role: ${teamMembers[i].role}`);
-    console.log(`Photo: ${teamMembers[i].photo}`);
-    console.log(`________________________________________________________`);
+// VERSIONE CON SOLO IL FOR
+// for(let i=0; i<teamMembers.length; i++){
+//     // - stampo in console le sue informazioni
+//     // console.log(`Name: ${teamMembers[i].name}`);
+//     // console.log(`Role: ${teamMembers[i].role}`);
+//     // console.log(`Photo: ${teamMembers[i].photo}`);
+//     // console.log(`________________________________________________________`);
     
-    // - BONUS: stampo nel DOM le sue informazioni in contenitori che stilizzerò dal CSS
-    // - Creo n <div> quanti sono gli elementi dell'array
+//     // // - BONUS: stampo nel DOM le sue informazioni in contenitori che stilizzerò dal CSS
+//     // // - Creo n <div> quanti sono gli elementi dell'array
+//     // createCard(cardContainerEl, teamMembers[i].name, teamMembers[i].role, teamMembers[i].photo);
+
+// }
+
+
+// VERSIONE CON IL FOR IN 
+for (let i=0; i<teamMembers.length; i++){
+    for(let key in teamMembers[i]){
+        console.log(`${key}: ${teamMembers[i][key]}`);
+    }
+    console.log(`________________________________________________________`);
+
     createCard(cardContainerEl, teamMembers[i].name, teamMembers[i].role, teamMembers[i].photo);
-
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
